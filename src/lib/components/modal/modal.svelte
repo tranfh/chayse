@@ -26,10 +26,10 @@
 	class:show={showModal}
 >
 	<div class="modal" class:show={showModal}>
-			<div class="top-hstack">
-				<button class="close-btn" on:click={toggleModal} aria-label="Close Overlay">X</button>
-			</div>
-			<slot></slot>
+		<div class="top-hstack">
+			<button class="close-btn" on:click={toggleModal} aria-label="Close Overlay">X</button>
+		</div>
+		<slot></slot>
 	</div>
 </div>
 

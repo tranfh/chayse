@@ -25,6 +25,21 @@
 		]
 	};
 
+	let questions = [
+		{
+			question: 'What is your favorite color?',
+			options: ['Red', 'Green', 'Blue', 'Yellow']
+		},
+		{
+			question: 'What is your favorite animal?',
+			options: ['Cat', 'Dog', 'Bird', 'Fish']
+		},
+		{
+			question: 'What is your favorite food?',
+			options: ['Pizza', 'Burger', 'Sushi', 'Pasta']
+		}
+	];
+
 	export function handleFormSubmit(data: { email: string; name: string }) {
 		return console.log(data.name, data.email);
 	}
@@ -45,6 +60,9 @@
 				imgSrc={modalData.imgSrc}
 				onSubmit={modalData.onSubmit}
 				on:questionnaire-complete={() => toggleModal()}
+				selectionDisplay={"row"}
+				questions={questions}
+
 			/>
 		</Modal>
 	{/if}
@@ -52,9 +70,6 @@
 		<Banner />
 	{/if}
 </div>
-
-<!-- Check if modal or banner selected -->
-<!-- Check the modal style selected -->
 
 <style>
 	button {

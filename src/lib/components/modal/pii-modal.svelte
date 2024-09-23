@@ -76,7 +76,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		flex:1;
+		flex: 1;
 	}
 
 	.vstack {
@@ -105,7 +105,7 @@
 	.box {
 		justify-content: end;
 		overflow: hidden;
-		flex:1
+		flex: 1;
 	}
 
 	img {

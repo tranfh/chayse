@@ -9,7 +9,8 @@
 	export let imageText: string;
 	export let onSubmit: (data: { email: string; name: string }) => void;
 	export let imgSrc: string;
-
+	export let selectionDisplay: "row" | "grid";
+	export let questions: {question: string, options: string[]}[] = [];
 	const dispatch = createEventDispatcher();
 
 	let currentPage: 'pii' | 'question' = 'pii';
@@ -19,21 +20,6 @@
 		onSubmit(data);
 		currentPage = 'question'; // Move to the question page
 	}
-
-	let questions = [
-		{
-			question: 'What is your favorite color?',
-			options: ['Red', 'Green', 'Blue', 'Yellow']
-		},
-		{
-			question: 'What is your favorite animal?',
-			options: ['Cat', 'Dog', 'Bird', 'Fish']
-		},
-		{
-			question: 'What is your favorite food?',
-			options: ['Pizza', 'Burger', 'Sushi', 'Pasta']
-		}
-	];
 
 	let currentQuestionIndex = 0;
 
@@ -59,12 +45,13 @@
 			question={questions[currentQuestionIndex].question}
 			options={questions[currentQuestionIndex].options}
 			on:answer={(event) => handleAnswer(event.detail)}
+			selectionDisplay={selectionDisplay}
 		/>
 	{/if}
 </div>
 
 <style>
-    div {
-        height: 100%;
-    }
+	div {
+		height: 100%;
+	}
 </style>
